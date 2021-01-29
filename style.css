@@ -1,0 +1,149 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.hover1:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(255, 0, 0, 0.7);
+}
+.hover2:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(0, 255, 0, 0.7);
+}
+.hover3:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(0, 0, 255, 0.7);
+}
+.hover4:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(255, 255, 0, 0.7);
+}
+.hover5:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.hover6:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(255, 0, 255, 0.7);
+}
+.hover7:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(0, 255, 255, 0.7);
+}
+.hover8:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(255, 166, 0, 0.7);
+}
+.hover9:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: rgba(0, 51, 0, 0.7);
+}
+
+.container {
+    display: flex;
+    width: 480px;
+    height: 480px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container > div {
+    background-color: rgba(128, 128, 128, 0.5);
+    height: 150px;
+    width: 150px;
+}
+
+.grey {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.active1:active {
+    background-color: red;
+}
+
+
+.active2:active {
+    background-color: rgb(0, 255, 0);
+}
+
+
+.active3:active {
+    background-color: rgb(0, 0, 255);
+}
+
+
+.active4:active {
+    background-color: rgb(255, 255, 0);
+}
+
+
+.active5:active {
+    background-color: rgb(255, 255, 255);
+}
+
+
+.active6:active {
+    background-color: rgb(255, 0, 255);
+}
+
+
+.active7:active {
+    background-color: rgb(0, 255, 255);
+}
+
+
+.active8:active {
+    background-color: rgb(255, 166, 0);
+}
+
+.active9:active {
+    background-color: rgb(0, 51, 0);
+}
+
+#start {
+    margin-top: 2rem;
+    font-size: 1.7em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: 0.2s;
+}
+
+#start:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#check  {
+    display: none;
+    margin-top: 2rem;
+    font-size: 1.7em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: 0.2s;
+}
+
+#check:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
