@@ -9,8 +9,13 @@ const six = document.getElementById('six');
 const seven = document.getElementById('seven');
 const eight = document.getElementById('eight');
 const nine = document.getElementById('nine');
-let sound1 = document.getElementById('sound1');
-let sound2 = document.getElementById('sound2');
+const sound1 = document.getElementById('sound1');
+const sound2 = document.getElementById('sound2');
+const correct = document.getElementById('correct');
+const incorrect = document.getElementById('incorrect');
+const win = document.getElementById('win');
+const round = document.getElementById('round');
+let roundCount = 1;
 let seq = [];
 let playerSeq = [];
 let arrayCheck = [];
@@ -93,7 +98,7 @@ let count = 1;
 startBtn.addEventListener('click', () => {
     start();
     startBtn.style.display = 'none';
-    checkBtn.style.display = 'inherit';
+ 
 });
 
 function start(){
@@ -106,6 +111,8 @@ function start(){
 }
 
 function compTurn(){
+
+    updateRound();
     
     let i = 0;                  
     function myLoop() {       
@@ -182,7 +189,7 @@ function compTurn(){
                 eight.style.background = null;
                 nine.style.background = null;
                 playerTurn();
-            }, 2000);
+            }, 1400);
         
         }           
       }, 1300)
@@ -213,12 +220,15 @@ function playerTurn() {
     nine.classList.add('hover9');
     nine.classList.add('active9');
 
+    checkBtn.style.display = 'inherit';
+
 }
 
 
 
 function check(){
     isPlayersTurn = false;
+    checkBtn.style.display = 'none';
     one.classList.remove('hover1');
     one.classList.remove('active1');
     two.classList.remove('hover2');
@@ -250,17 +260,39 @@ function check(){
 }
 
     if (arrayCheck.length === count && playerSeq.length === count) {
+        if(count === 10) {
+            win.style.display="inherit";
+            setTimeout(() => {
+                location.reload();
+            }, 2500);
+
+        } else {
         console.log('next turn')
+        correct.style.display = 'inherit'
+        setTimeout(() => {
+            correct.style.display = 'none';
+        }, 1000);
         playerSeq = [];
         arrayCheck = [];
         canCheck = false;
         count++;
         compTurn();
-
-    } else {
-       alert('game over');
-       location.reload();
     }
+    } else {
+        incorrect.style.display = 'inherit'
+        setTimeout(() => {
+            incorrect.style.display = 'none';
+        }, 2000);
+        setTimeout(() => {
+            location.reload();
+        }, 2500);
+      
+    }
+}
+
+function updateRound() {
+    round.innerHTML ="Round: " + roundCount;
+    roundCount++;
 }
 
 
